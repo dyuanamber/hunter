@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Bold &mdash; Free HTML5 Bootstrap Website Template by FreeHTML5.co</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Website Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+
+  <!-- 
+	//////////////////////////////////////////////////////
+
+	FREE HTML5 TEMPLATE 
+	DESIGNED & DEVELOPED by FreeHTML5.co
+		
+	Website: 		http://freehtml5.co/
+	Email: 			info@freehtml5.co
+	Twitter: 		http://twitter.com/fh5co
+	Facebook: 		https://www.facebook.com/fh5co
+
+	//////////////////////////////////////////////////////
+	
+	Change Version: Hunter Hawks
+	
+	 -->
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'> -->
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="css/flexslider.css">
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css"> -->
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+<script>
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      var map;
+      var infowindow;
+
+      function initMap() {
+        var pyrmont = {lat: 40.740898, lng: -74.002181};
+
+        map = new google.maps.Map(document.getElementById('map-canvas'), {
+          center: pyrmont,
+          zoom: 13
+        });
+
+        infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+          location: pyrmont,
+          radius: 500,
+          name: 'verizon wireless'
+          // type: ['store']
+        }, callback);
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infowindow.setPosition(pos); 
+            infowindow.setContent('Location found.');
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infowindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infowindow, map.getCenter());
+        }
+      }
+
+	function handleLocationError(browserHasGeolocation, infowindow, pos) {
+        infowindow.setPosition(pos);
+        infowindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+      }
+
+      function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
+
+      function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name);
+          infowindow.open(map, this);
+        });
+      }
+
+
+    </script>
+
+	</head>
+	<body>
+	
+	
+	<div id="fh5co-page">
+	<header id="fh5co-header" role="banner">
+		<div class="container">
+			<div class="header-inner">
+				<h1><a href="#">WiTNY<span>.</span></a></h1>
+				<h1><a href="#">Hunter Hawks<span>.</span></a></h1>
+				<!-- <nav role="navigation">
+					<ul>
+						<li><a href="products.html">Products</a></li>
+						<li><a href="services.html">Services</a></li>
+						<li><a href="pricing.html">Pricing</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="contact.html">Contact</a></li>
+						<li class="cta"><a href="#">Get started</a></li>
+					</ul>
+				</nav> -->
+			</div>
+		</div>
+	</header>
+	
+
+	<aside id="fh5co-hero" class="js-fullheight">
+		<div class="flexslider js-fullheight">
+			<ul class="slides">
+		   	<li style="background-image: url(images/slide_1.jpg);">
+		   		<div class="overlay-gradient"></div>
+		   		<div class="container">
+		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+		   				<div class="slider-text-inner">
+		   					<h2>Welcome to Verizon Wireless Appointment Online</h2>
+		   					<p><a href="#fh5co-why-us" class="btn btn-primary btn-lg">Get started</a></p>
+		   				</div>
+		   			</div>
+		   		</div>
+		   	</li>
+		   	<!-- <li style="background-image: url(images/slide_3.jpg);">
+		   		<div class="container">
+		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+		   				<div class="slider-text-inner">
+		   					<h2>Take Your Business To The Next Level</h2>
+		   					<p><a href="#" class="btn btn-primary btn-lg">Get started</a></p>
+		   				</div>
+		   			</div>
+		   		</div>
+		   	</li>
+		   	<li style="background-image: url(images/slide_2.jpg);">
+		   		<div class="container">
+		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
+		   				<div class="slider-text-inner">
+		   					<h2>We Think Different That Others Can't</h2>
+		   					<p><a href="#" class="btn btn-primary btn-lg">Get started</a></p>
+		   				</div>
+		   			</div>
+		   		</div>
+		   	</li> -->
+		  	</ul>
+	  	</div>
+	</aside>
+
+	<div id="fh5co-why-us" class="animate-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+					<h2>Would you like to schedule a ...</h2>
+				</div>
+				<div class="col-xs-6 text-center item-block">
+					<span class="icon"><img src="images/iphone.svg" alt="Free HTML5 Templates" class="img-responsive"></span>
+					<h3>Phone Drop Off</h3>
+					<p>Dropoff my phone and pick up later.</p>
+					<p><a href="#fh5co-loaner" class="btn btn-primary btn-outline with-arrow">Phone Drop Off <i class="icon-arrow-right"></i></a></p>
+				</div>
+				<div class="col-xs-6 text-center item-block">
+					<span class="icon"><img src="images/person.svg" alt="Free HTML5 Templates" class="img-responsive"></span>
+					<h3>One on one service</h3>
+					<p>Talk to an expert in the store.</p>
+					<p><a href="#fh5co-user" class="btn btn-primary btn-outline with-arrow">One on one service <i class="icon-arrow-right"></i></a></p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	
+	<div id="fh5co-loaner" class="animate-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading form-group">
+				  <!-- <label for="sel1">While we check up your phone, </label> -->
+				  <h2>While your phone is in the store, would you like a loaner phone?</h2>
+				  <label for="sel1">Your contacts and apps will be preloaded.</label>
+				</div>
+
+				<div class="col-xs-6 text-center item-block">
+				
+				<div class="form-group">
+					  <!--<label for="sel1">Yes ! I want a ...:</label> -->
+					  <select class="form-control" id="phone">
+					  <option>Yes! I want a ... </option>
+					    <option>Samsung Galaxy 7</option>
+						  <option>Samsung Galaxy 6</option>
+						  <option>iPhone 6S</option>
+						  <option>iPhone 6 plus</option>
+						  <option>iPhone 5S</option>
+						  <option>Flip Phone, please</option>
+					  </select>
+			  		</div>
+<!--
+					<div class="dropdown">
+					  <button class="btn btn-primary btn-outline with-arrow dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    Yes... I want a ...    
+					    <span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					    <li><a href="#fh5co-user">iPhone 6s</a></li>
+					    <li><a href="#fh5co-user">iPhone 6s Plus</a></li>
+					    <li><a href="#fh5co-user">Samsung Galaxy 7</a></li>
+					    <li><a href="#fh5co-user">iPhone 5s (Gold)</a></li>
+					    <li><a href="#fh5co-user">Other</a></li>
+					  </ul>
+					</div>
+-->
+					
+					
+				</div>
+			
+				<div class="col-xs-6 text-center item-block">
+					<p><a href="#fh5co-user" class="btn btn-primary btn-outline with-arrow">No, I am good.<i class="icon-arrow-right"></i></a></p>
+				</div>	
+			</div>
+			
+			<br/><br/>
+			<div></div>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading form-group">
+				<p><a href="#fh5co-user" class="btn btn-primary btn-outline with-arrow">Next<i class="icon-arrow-right"></i></a></p>
+				</div>
+			</div>
+
+				<!-- <p><a href="#fh5co-problem" class="btn btn-primary btn-outline with-arrow">Sure, why not<i class="icon-arrow-right"></i></a></p> -->
+
+			</div>
+		</div>
+	</div>
+	
+	
+	<div id="fh5co-user" class="animate-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading form-group">
+				  <!-- <label for="sel1">While we check up your phone, </label> -->
+				  <h2>Select a store and time to see us</h2>
+				</div>
+				<div class="col-md-4 text-center">
+				<!--<label for="sel1">Click on your favourite Verizon Wireless store:</label>-->
+				
+				<div class="form-group">
+					  <label for="sel1">Select a Verizon Wireless Store near you:</label>
+					  <select class="form-control" id="sel1">
+					    <option>141 8TH AVE, New York, NY</option>
+						  <option>154 WEST 14TH ST, New York, NY</option>
+						  <option>555 6TH AVE, New York, NY</option>
+						  <option>263 WEST 23RD. STREET, New York, NY</option>
+						  <option>462 6TH AVENUE, New York, NY</option>
+					  </select>
+			  	</div>
+					
+					<div id="map-canvas"></div>
+				</div>
+
+    			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaS-r8uok0knTJN9ISip44kzvWOaYF6Es&libraries=places&callback=initMap" async defer></script>
+
+				<div class="col-md-4 text-center">
+				<label for="sel1">Choose a date:</label>
+					<div class="demo"></div>
+				</div>
+				<div class="col-md-4 text-center">
+					<div class="form-group">
+					  <label for="sel1">Select timeslot:</label>
+					  <select class="form-control" id="sel1">
+					    <option>11:00am-11:30am</option>
+						  <option>11:30am-12:00pm</option>
+						  <option>2:30pm-3:00pm</option>
+						  <option>3:00pm-3:30pm</option>
+						  <option>3:30pm-4:00pm</option>
+					  </select>
+			  		</div>
+				</div>
+				
+			</div>
+			<br/><br/>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading form-group">
+				<p><a href="#fh5co-problem" class="btn btn-primary btn-outline with-arrow">Next<i class="icon-arrow-right"></i></a></p>
+				</div>
+			</div>
+	</div>
+
+	<div id="fh5co-problem" class="animate-box">
+		<div class="container">
+				
+
+			<div class="row">
+
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading form-group">
+								  <h2>Help us describe the problem</h2>
+
+				  <label for="sel1">Check one that applies:</label>
+				  <select class="form-control" id="sel1">
+				    <option>Cracked screen</option>
+					  <option>Weather Damage (water, buried in sand, etc)</option>
+					  <option>Device won't turn on/off</option>
+					  <option>Operating system issues (phone crashes, won't run programs/apps well)</option>
+					  <option>Battery damage</option>
+					  <option>It's something else...I need someone to take a look.</option>
+
+				  </select>
+				</div>
+
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading form-group">
+					<p><a href="#fh5co-contact" class="btn btn-primary btn-outline with-arrow">Next<i class="icon-arrow-right"></i></a></p>	
+					</div>
+			</div>
+		</div>
+		
+	</div>
+
+
+	
+
+	<div id="fh5co-contact" class="animate-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading form-group">
+					<h2>How can we reach you?</h2>
+					<small id="emailHelp" class="form-text text-muted">We will never sell your contact info to a third party.</small>
+					<p>&nbsp;</p>
+					<p></p>
+					
+					<form>
+					  <div class="form-group">
+					    <label for="name" placeholder="Enter full name">Your Name</label>
+					    <textarea class="form-control" id="name" rows="1" placeholder="enter your name" required maxlength="25"></textarea>
+					  </div>
+					  <div>
+					    <label for="phone" placeholder="Enter phone number">Phone number</label>
+					    <textarea class="form-control" id="phone" rows="1" maxlength="10" minlength="10" placeholder="enter phone number" required></textarea>
+					  </div>
+					  <div class="form-group">
+					    <label for="name">Email address</label>
+					    <input type="email" class="form-control" id="name" aria-describedby="emailHelp" placeholder="enter email" required>
+					  </div>
+					  <div class="form-group">
+					  	<button style="margin-top: 10%" type="submit" class="btn btn-primary btn-outline with-arrow" onclick="alert('Success! A confirmation has been sent to your phone and email! Looking forward to seeing you!')">Submit<i class="icon-arrow-right"></i></button>
+					  </div>
+					</form>	
+				</div>			
+			</div>
+		</div>
+	</div>
+
+<!-- 	<div id="fh5co-number-in-line" class="animate-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+					<h2>Your number in line is:</h2>
+					<h1><b>23</b></h1>
+				</div>
+			</div>
+		</div>
+	</div> -->
+
+
+
+	<!-- <div class="fh5co-section-with-image">
+		
+		<img src="images/image_1.jpg" alt="" class="img-responsive">
+		<div class="fh5co-box animate-box">
+			<h2>Your number in line is: </h2>
+			<h3>23</h3>
+			<!-- <p><a href="#" class="btn btn-primary btn-outline with-arrow">Get started <i class="icon-arrow-right"></i></a></p> 
+		</div>
+		
+	</div>-->
+
+	<div id="fh5co-testimonial" class="animate-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+					<h2>If you like us, spread the words</h2>
+				</div>
+				<div class="col-md-4 text-center item-block">
+					<blockquote>
+						<p>&ldquo; Appointment online saved me half a day! &rdquo;</p>
+						<p><span class="fh5co-author"><cite>Jason Davidson</cite></span><i class="icon twitter-color icon-twitter pull-right"></i></p>
+
+					</blockquote>
+				</div>
+				<div class="col-md-4 text-center item-block">
+					<blockquote>
+						<p>&ldquo; Things are much faster with Verizon Wireless now...no more waiting!&rdquo;</p>
+						<p><span class="fh5co-author"><cite>Kyle Smith</cite></span><i class="icon wechat-color icon-wechat pull-right"></i></p>
+					</blockquote>
+				</div>
+				<div class="col-md-4 text-center item-block">
+						
+					<blockquote>
+						<p>&ldquo; I love the loaner phone! &rdquo;</p>
+						<p><span class="fh5co-author"><cite>Rick Cook</cite></span><i class="icon facebook-color icon-facebook pull-right"></i></p>
+					</blockquote>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- <div id="fh5co-grid-products" class="animate-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+					<h2>Awesome Products</h2>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+				</div>
+			</div>
+		</div>
+
+		
+		<div class="col-1">
+			<a href="#" class="item-grid one" style="background-image: url(images/image_4.jpg)">
+				<div class="v-align">
+					<div class="v-align-middle">
+						<span class="icon"><img src="images/9.svg" alt="Free HTML5 Templates" class="img-responsive"></span>
+						<h3 class="title">Geographical App</h3>
+						<h5 class="category">Web Application</h5>
+					</div>
+				</div>
+			</a>
+			<a href="#" class="item-grid three" style="background-image: url(images/image_3.jpg)">
+				<div class="v-align">
+					<div class="v-align-middle">
+						<span class="icon"><img src="images/18.svg" alt="Free HTML5 Templates" class="img-responsive"></span>
+						<h3 class="title">Communication App</h3>
+						<h5 class="category">Web Application</h5>
+					</div>
+				</div>
+			</a>
+		</div>
+		<div class="col-2">
+			<a href="#" class="item-grid two" style="background-image: url(images/image_2.jpg)">
+				<div class="v-align">
+					<div class="v-align-middle">
+						<span class="icon"><img src="images/27.svg" alt="Free HTML5 Templates" class="img-responsive"></span>
+						<h3 class="title">Golf Club Tracker</h3>
+						<h5 class="category">Web Application</h5>
+					</div>
+				</div>
+			</a>
+			
+		</div>
+		
+		
+	</div> -->
+	
+
+	<!-- <div id="fh5co-blog" class="animate-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+					<h2>Latest <em>from</em> Blog</h2>
+					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<a class="fh5co-entry" href="#">
+						<figure>
+						<img src="images/image_1.jpg" alt="Free Website Template, Free HTML5 Bootstrap Template" class="img-responsive">
+						</figure>
+						<div class="fh5co-copy">
+							<h3>We Create Awesome Free Templates</h3>
+							<span class="fh5co-date">June 8, 2016</span>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a class="fh5co-entry" href="#">
+						<figure>
+						<img src="images/image_2.jpg" alt="Free Website Template, Free HTML5 Bootstrap Template" class="img-responsive">
+						</figure>
+						<div class="fh5co-copy">
+							<h3>Handcrafted Using CSS3 &amp; HTML5</h3>
+							<span class="fh5co-date">June 8, 2016</span>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-4">
+					<a class="fh5co-entry" href="#">
+						<figure>
+						<img src="images/image_3.jpg" alt="Free Website Template, Free HTML5 Bootstrap Template" class="img-responsive">
+						</figure>
+						<div class="fh5co-copy">
+							<h3>We Try To Update The Site Everyday</h3>
+							<span class="fh5co-date">June 8, 2016</span>
+							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+						</div>
+					</a>
+				</div>
+				<div class="col-md-12 text-center">
+					<p><a href="#" class="btn btn-primary btn-outline with-arrow">View More Posts <i class="icon-arrow-right"></i></a></p>
+				</div>
+			</div>
+		</div>	
+	</div> -->
+
+	<!-- <div class="fh5co-cta" style="background-image: url(images/image_3.jpg);">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="col-md-12 text-center animate-box">
+				<h3>We Try To Update The Site Everyday</h3>
+				<p><a href="#" class="btn btn-primary btn-outline with-arrow">Get started now! <i class="icon-arrow-right"></i></a></p>
+			</div>
+		</div>
+	</div> -->
+
+	
+	<footer id="fh5co-footer" role="contentinfo">
+	
+		<div class="container">
+			<!-- <div class="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+				<h3>About Us</h3>
+				<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+				<p><a href="#" class="btn btn-primary btn-outline with-arrow btn-sm">I'm button <i class="icon-arrow-right"></i></a></p>
+			</div>
+			<div class="col-md-6 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+				<h3>Our Services</h3>
+				<ul class="float">
+					<li><a href="#">Web Design</a></li>
+					<li><a href="#">Branding &amp; Identity</a></li>
+					<li><a href="#">Free HTML5</a></li>
+					<li><a href="#">HandCrafted Templates</a></li>
+				</ul>
+				<ul class="float">
+					<li><a href="#">Free Bootstrap Template</a></li>
+					<li><a href="#">Free HTML5 Template</a></li>
+					<li><a href="#">Free HTML5 &amp; CSS3 Template</a></li>
+					<li><a href="#">HandCrafted Templates</a></li>
+				</ul>
+
+			</div>
+
+			<div class="col-md-2 col-md-push-1 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
+				<h3>Follow Us</h3>
+				<ul class="fh5co-social">
+					<li><a href="#"><i class="icon-twitter"></i></a></li>
+					<li><a href="#"><i class="icon-facebook"></i></a></li>
+					<li><a href="#"><i class="icon-google-plus"></i></a></li>
+					<li><a href="#"><i class="icon-instagram"></i></a></li>
+				</ul>
+			</div> -->
+			
+			
+			<div class="col-md-12 fh5co-copyright text-center">
+				<p>&copy; 2016 Free HTML5 template. All Rights Reserved. <span>Designed with <i class="icon-heart"></i> by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Colored Icons by <a href="https://dribbble.com/TrinhHo" target="_blank">Trinh Ho</a> Demo Images by <a href="http://unsplash.com/" target="_blank">Unsplash</a></span></p>	
+			</div>
+			
+		</div>
+	</footer>
+	</div>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+            
+
+    
+<!--Google Maps API-->
+	<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnycWatbGyK6ldFqErjFtko1yeMclNUOA&amp;sensor=true"></script> -->
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+
+	<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
+	<script src="js/jquery.supercal.js"></script> 
+	<!-- MAIN JS -->
+	<script src="js/main.js"></script>
+
+	</body>
+</html>
+
