@@ -7,7 +7,7 @@
 }
 /* =======================================================
 *
-* 	Template Style 
+* 	Template Style
 *	Edit this section
 *
 * ======================================================= */
@@ -23,13 +23,13 @@ body {
 }
 
 a {
-  color: #00B906;
+  color: #DE0000;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
 }
 a:hover, a:active, a:focus {
-  color: #00B906;
+  color: #DE0000;
   outline: none;
 }
 
@@ -46,17 +46,17 @@ h1, h2, h3, h4, h5, h6, figure {
 
 ::-webkit-selection {
   color: #fff;
-  background: #00B906;
+  background: #DE0000;
 }
 
 ::-moz-selection {
   color: #fff;
-  background: #00B906;
+  background: #DE0000;
 }
 
 ::selection {
   color: #fff;
-  background: #00B906;
+  background: #DE0000;
 }
 
 .btn {
@@ -85,9 +85,9 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .btn-primary {
-  background: #00B906;
+  background: #DE0000;
   color: #fff;
-  border: 2px solid #00B906;
+  border: 2px solid #DE0000;
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   background: #00d307 !important;
@@ -95,30 +95,30 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .btn-primary.btn-outline {
   background: transparent;
-  color: #00B906;
-  border: 2px solid #00B906;
+  color: #DE0000;
+  border: 2px solid #DE0000;
 }
 .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
-  background: #00B906;
+  background: #DE0000;
   color: #fff;
 }
 
 .btn-success {
-  background: #5cb85c;
+  background: #D82020;
   color: #fff;
-  border: 2px solid #5cb85c;
+  border: 2px solid #D82020;
 }
 .btn-success:hover, .btn-success:focus, .btn-success:active {
-  background: #4cae4c !important;
-  border-color: #4cae4c !important;
+  background: #D82020 !important;
+  border-color: #D82020 !important;
 }
 .btn-success.btn-outline {
   background: transparent;
-  color: #5cb85c;
-  border: 2px solid #5cb85c;
+  color: #D82020;
+  border: 2px solid #D82020;
 }
 .btn-success.btn-outline:hover, .btn-success.btn-outline:focus, .btn-success.btn-outline:active {
-  background: #5cb85c;
+  background: #D82020;
   color: #fff;
 }
 
@@ -229,7 +229,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .form-control:active, .form-control:focus {
   outline: none;
   box-shadow: none;
-  border-color: #00B906;
+  border-color: #DE0000;
 }
 
 .fh5co-social {
@@ -261,7 +261,7 @@ h1, h2, h3, h4, h5, h6, figure {
   border-radius: 7px;
 }
 .fh5co-social li a:hover {
-  color: #00B906;
+  color: #DE0000;
 }
 .fh5co-social li a:hover, .fh5co-social li a:active, .fh5co-social li a:focus {
   outline: none;
@@ -280,7 +280,7 @@ h1, h2, h3, h4, h5, h6, figure {
   margin-top: 5px;
 }
 .fh5co-feature .fh5co-icon i {
-  color: #00B906;
+  color: #DE0000;
   font-size: 40px;
 }
 .fh5co-feature .fh5co-text {
@@ -381,7 +381,7 @@ h1, h2, h3, h4, h5, h6, figure {
   color: white;
 }
 #fh5co-header h1 a > span {
-  color: #00B906;
+  color: #DE0000;
 }
 #fh5co-header h1 a:hover, #fh5co-header h1 a:active, #fh5co-header h1 a:focus {
   text-decoration: none;
@@ -480,7 +480,7 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 #fh5co-header nav ul li.cta a:hover {
   background: #fff;
-  color: #00B906;
+  color: #DE0000;
 }
 #fh5co-header nav ul li.cta a:hover:after {
   display: none;
@@ -891,10 +891,10 @@ h1, h2, h3, h4, h5, h6, figure {
   top: .3em;
   left: 0;
   font-size: 22px;
-  color: #00B906;
+  color: #DE0000;
 }
 .contact-info li a {
-  color: #00B906;
+  color: #DE0000;
 }
 
 #map {
@@ -1138,7 +1138,7 @@ h1, h2, h3, h4, h5, h6, figure {
 #fh5co-blog .fh5co-entry h3 {
   margin-bottom: 10px;
   line-height: 1.5;
-  color: #00B906;
+  color: #DE0000;
 }
 #fh5co-blog .fh5co-entry p {
   color: #999999;
@@ -1321,10 +1321,10 @@ h1, h2, h3, h4, h5, h6, figure {
   text-decoration: none !important;
 }
 #fh5co-offcanvas ul li a:hover {
-  color: #00B906;
+  color: #DE0000;
 }
 #fh5co-offcanvas ul li.active a {
-  color: #00B906;
+  color: #DE0000;
 }
 #fh5co-offcanvas ul li.cta {
   margin-left: 0;
@@ -1485,10 +1485,10 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
 }
 .fh5co-pricing .price-box.popular .btn-select-plan {
-  background: #00B906;
+  background: #DE0000;
 }
 .fh5co-pricing .price-box.popular .price {
-  color: #00B906;
+  color: #DE0000;
 }
 .fh5co-pricing .price-box .btn-select-plan {
   padding: 10px 20px;

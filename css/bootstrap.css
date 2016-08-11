@@ -2704,8 +2704,8 @@ a.btn.disabled, fieldset[disabled] a.btn {
 
 .btn-success {
   color: #fff;
-  background-color: #5cb85c;
-  border-color: #4cae4c;
+  background-color: #D82020;
+  border-color: #D82020;
 }
 .btn-success:focus, .btn-success.focus {
   color: #fff;
@@ -2731,11 +2731,11 @@ a.btn.disabled, fieldset[disabled] a.btn {
   background-image: none;
 }
 .btn-success.disabled, .btn-success.disabled:hover, .btn-success.disabled:focus, .btn-success.disabled.focus, .btn-success.disabled:active, .btn-success.disabled.active, .btn-success[disabled], .btn-success[disabled]:hover, .btn-success[disabled]:focus, .btn-success[disabled].focus, .btn-success[disabled]:active, .btn-success[disabled].active, fieldset[disabled] .btn-success, fieldset[disabled] .btn-success:hover, fieldset[disabled] .btn-success:focus, fieldset[disabled] .btn-success.focus, fieldset[disabled] .btn-success:active, fieldset[disabled] .btn-success.active {
-  background-color: #5cb85c;
-  border-color: #4cae4c;
+  background-color: #D82020;
+  border-color: #D82020;
 }
 .btn-success .badge {
-  color: #5cb85c;
+  color: #D82020;
   background-color: #fff;
 }
 
@@ -4305,7 +4305,7 @@ a.label:hover, a.label:focus {
 }
 
 .label-success {
-  background-color: #5cb85c;
+  background-color: #D82020;
 }
 .label-success[href]:hover, .label-success[href]:focus {
   background-color: #449d44;
@@ -4587,7 +4587,7 @@ a.thumbnail.active {
 }
 
 .progress-bar-success {
-  background-color: #5cb85c;
+  background-color: #D82020;
 }
 .progress-striped .progress-bar-success {
   background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
