@@ -24,6 +24,9 @@
 	Facebook: 		https://www.facebook.com/fh5co
 
 	//////////////////////////////////////////////////////
+	
+	Change Version: Hunter Hawks
+	
 	 -->
 
   	<!-- Facebook and Twitter integration -->
@@ -55,12 +58,87 @@
 	<!-- <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css"> -->
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
-	<script type="text/javascript" src="jquery.url.js"></script>
 
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+
+<script>
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      var map;
+      var infowindow;
+
+      function initMap() {
+        var pyrmont = {lat: 40.740898, lng: -74.002181};
+
+        map = new google.maps.Map(document.getElementById('map-canvas'), {
+          center: pyrmont,
+          zoom: 13
+        });
+
+        infowindow = new google.maps.InfoWindow();
+        var service = new google.maps.places.PlacesService(map);
+        service.nearbySearch({
+          location: pyrmont,
+          radius: 500,
+          name: 'verizon wireless'
+          // type: ['store']
+        }, callback);
+
+        // Try HTML5 geolocation.
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infowindow.setPosition(pos); 
+            infowindow.setContent('Location found.');
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infowindow, map.getCenter());
+          });
+        } else {
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infowindow, map.getCenter());
+        }
+      }
+
+	function handleLocationError(browserHasGeolocation, infowindow, pos) {
+        infowindow.setPosition(pos);
+        infowindow.setContent(browserHasGeolocation ?
+                              'Error: The Geolocation service failed.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+      }
+
+      function callback(results, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          for (var i = 0; i < results.length; i++) {
+            createMarker(results[i]);
+          }
+        }
+      }
+
+      function createMarker(place) {
+        var placeLoc = place.geometry.location;
+        var marker = new google.maps.Marker({
+          map: map,
+          position: place.geometry.location
+        });
+
+        google.maps.event.addListener(marker, 'click', function() {
+          infowindow.setContent(place.name);
+          infowindow.open(map, this);
+        });
+      }
+
+
+    </script>
 
 	</head>
 	<body>
@@ -70,7 +148,7 @@
 	<header id="fh5co-header" role="banner">
 		<div class="container">
 			<div class="header-inner">
-				<h1><a href="#">WiTNY<span>.</span></a></h1>
+				<h1><a href="#">WiTNY#Hunter Hawks<span>.</span></a></h1>
 				<!-- <nav role="navigation">
 					<ul>
 						<li><a href="products.html">Products</a></li>
@@ -94,7 +172,7 @@
 		   		<div class="container">
 		   			<div class="col-md-10 col-md-offset-1 text-center js-fullheight slider-text">
 		   				<div class="slider-text-inner">
-		   					<h2>Welcome to the new Verizon Wireless customer service</h2>
+		   					<h2>Welcome to Verizon Wireless Appointment Online</h2>
 		   					<p><a href="#fh5co-why-us" class="btn btn-primary btn-lg">Get started</a></p>
 		   				</div>
 		   			</div>
@@ -128,55 +206,157 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-					<h2>How can we help you?</h2>
+					<h2>Would you like to schedule a ...</h2>
 				</div>
-				<div class="col-md-4 text-center item-block">
-					<span class="icon"><img src="images/30.svg" alt="Free HTML5 Templates" class="img-responsive"></span>
+				<div class="col-xs-6 text-center item-block">
+					<span class="icon"><img src="images/iphone.svg" alt="Free HTML5 Templates" class="img-responsive"></span>
 					<h3>Phone Drop Off</h3>
-					<p>Drop your phone and go away.</p>
-					<p><a href="#fh5co-user" class="btn btn-primary btn-outline with-arrow">Ok <i class="icon-arrow-right"></i></a></p>
+					<p>Dropoff my phone and pick up later.</p>
+					<p><a href="#fh5co-loaner" class="btn btn-primary btn-outline with-arrow">Ok <i class="icon-arrow-right"></i></a></p>
 				</div>
-				<div class="col-md-4 text-center item-block">
-					<span class="icon"><img src="images/18.svg" alt="Free HTML5 Templates" class="img-responsive"></span>
+				<div class="col-xs-6 text-center item-block">
+					<span class="icon"><img src="images/person.svg" alt="Free HTML5 Templates" class="img-responsive"></span>
 					<h3>One on one service</h3>
-					<p>Meet one of us in person.</p>
+					<p>Talk to an expert in the store.</p>
 					<p><a href="#fh5co-user" class="btn btn-primary btn-outline with-arrow">Ok <i class="icon-arrow-right"></i></a></p>
-				</div>
-				<div class="col-md-4 text-center item-block">
-					<span class="icon"><img src="images/27.svg" alt="Free HTML5 Templates" class="img-responsive"></span>
-					<h3>Customer support</h3>
-					<p>Oh you have a technical problem?</p>
-					<p><a href="#fh5co-user" class="btn btn-primary btn-outline with-arrow">Ok<i class="icon-arrow-right"></i></a></p>
 				</div>
 			</div>
 		</div>
 	</div>
 
+	
+	<div id="fh5co-loaner" class="animate-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading form-group">
+				  <!-- <label for="sel1">While we check up your phone, </label> -->
+				  <h2>While your phone is in the store, would you like a loaner phone?</h2>
+				  <label for="sel1">Your contacts and apps will be preloaded.</label>
+				</div>
+
+				<div class="col-xs-6 text-center item-block">
+				
+
+					<div class="dropdown">
+					  <button class="btn btn-primary btn-outline with-arrow dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    Yes... I want a ...    <!--<i class="icon-arrow-right"></i> -->
+					    <span class="caret"></span>
+					  </button>
+					  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					    <li><a href="#fh5co-user">iPhone 6s</a></li>
+					    <li><a href="#fh5co-user">iPhone 6s Plus</a></li>
+					    <li><a href="#fh5co-user">Samsung Galaxy 7</a></li>
+					    <li><a href="#fh5co-user">iPhone 5s (Gold)</a></li>
+					    <li><a href="#fh5co-user">Other</a></li>
+					  </ul>
+					</div>
+					
+					
+				</div>
+			
+				<div class="col-xs-6 text-center item-block">
+					<p><a href="#fh5co-user" class="btn btn-primary btn-outline with-arrow">No, I am good.<i class="icon-arrow-right"></i></a></p>
+				</div>	
+			</div>
+
+				<!-- <p><a href="#fh5co-problem" class="btn btn-primary btn-outline with-arrow">Sure, why not<i class="icon-arrow-right"></i></a></p> -->
+				
+			</div>
+		</div>
+	</div>
+	
+	
 	<div id="fh5co-user" class="animate-box">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 text-center">
+				<label for="sel1">Click on your favourite Verizon Wireless store:</label>
 					<div id="map-canvas"></div>
 				</div>
+
+    			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCaS-r8uok0knTJN9ISip44kzvWOaYF6Es&libraries=places&callback=initMap" async defer></script>
+
 				<div class="col-md-4 text-center">
+				<label for="sel1">Choose a date:</label>
 					<div class="demo"></div>
 				</div>
 				<div class="col-md-4 text-center">
-				<div class="form-group">
-				  <label for="sel1">Select timeslot:</label>
+					<div class="form-group">
+					  <label for="sel1">Select timeslot:</label>
+					  <select class="form-control" id="sel1">
+					    <option>11:00am-11:30am</option>
+						  <option>11:30am-12:00pm</option>
+						  <option>2:30pm-3:00pm</option>
+						  <option>3:00pm-3:30pm</option>
+						  <option>3:30pm-4:00pm</option>
+					  </select>
+			  		</div>
+				</div>
+				
+			</div>
+			<br/><br/>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading form-group">
+				<p><a href="#fh5co-problem" class="btn btn-primary btn-outline with-arrow">Ok<i class="icon-arrow-right"></i></a></p>
+				</div>
+			</div>
+	</div>
+
+	<div id="fh5co-problem" class="animate-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading form-group">
+				  <label for="sel1">Check one that applies:</label>
 				  <select class="form-control" id="sel1">
-				    <option>11:00am-11:30am</option>
-					  <option>11:30am-12:00pm</option>
-					  <option>2:30pm-3:00pm</option>
-					  <option>3:00pm-3:30pm</option>
-					  <option>3:30pm-4:00pm</option>
+				    <option>Cracked screen</option>
+					  <option>Weather Damage (water, buried in sand, etc)</option>
+					  <option>Device won't turn on/off</option>
+					  <option>Operating system issues (phone crashes, won't run programs/apps well)</option>
+					  <option>Battery damage</option>
 				  </select>
 			  </div>
+
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading form-group">
+					<p><a href="#fh5co-contact" class="btn btn-primary btn-outline with-arrow">Ok<i class="icon-arrow-right"></i></a></p>	
+					</div>
+			</div>
+		</div>
+		
+	</div>
+
+
+	
+
+	<div id="fh5co-contact" class="animate-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading form-group">
+					<form>
+					  <div class="form-group">
+					    <label for="name" placeholder="Enter full name">Full name</label>
+					    <textarea class="form-control" id="name" rows="1" required maxlength="25"></textarea>
+					  </div>
+					  <div class="form-group">
+					    <label for="name">Email address</label>
+					    <input type="email" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter email" required>
+					    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+					  </div>
+					  <div>
+					    <label for="phone" placeholder="Enter phone number">Phone number</label>
+					    <textarea class="form-control" id="phone" rows="1" maxlength="10" minlength="10" required></textarea>
+					  </div>
+					  <div class="form-group">
+					  	<button style="margin-top: 10%" type="submit" class="btn btn-primary btn-outline with-arrow" onclick="alert('A configrmation has been sent to your email/phone')">Submit<i class="icon-arrow-right"></i></button>
+					  </div>
+					</form>	
+				</div>			
 			</div>
 		</div>
 	</div>
 
-	<div id="fh5co-number-in-line" class="animate-box">
+<!-- 	<div id="fh5co-number-in-line" class="animate-box">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
@@ -185,7 +365,9 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
+
+
 
 	<!-- <div class="fh5co-section-with-image">
 		
@@ -390,7 +572,7 @@
 
     
 <!--Google Maps API-->
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnycWatbGyK6ldFqErjFtko1yeMclNUOA&amp;sensor=true"></script>
+	<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnycWatbGyK6ldFqErjFtko1yeMclNUOA&amp;sensor=true"></script> -->
 
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
